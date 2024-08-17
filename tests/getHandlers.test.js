@@ -34,6 +34,7 @@ test('The First Courier Should be Order and go', async () => {
 	} catch (error) {
 		console.error(error);
 	}
+	actualResponseBody = response;
 	let data = await response.json();
 	const name = data[0]["name"];
 	expect(name).toBe("Order and Go");
