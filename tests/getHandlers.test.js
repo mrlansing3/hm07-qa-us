@@ -28,13 +28,12 @@ test('The Closing Hour is Later than the Opening Hour', async () => {
 
 //Body Test for "Order and Go"
 test('The First Courier Should be Order and go', async () => {
-	let actualResponseBody;
+	let response;
 	try {
 		response = await fetch(`${config.API_URL}api/v1/couriers`);
 	} catch (error) {
 		console.error(error);
 	}
-	actualResponseBody = response;
 	let data = await response.json();
 	const name = data[0]["name"];
 	expect(name).toBe("Order and Go");
